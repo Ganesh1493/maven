@@ -1,12 +1,14 @@
-Maven is a powerful build automation and project management tool primarily used for Java projects. It falls under the category of build tools in the DevOps ecosystem.
+Maven is a powerful build automation and project management tool primarily used for Java projects. It's an open source software 
+and purely written in java (java based tool). 
+It falls under the category of build tools in the DevOps ecosystem.
 
 Here are some key aspects of Maven in DevOps:
 
 1. Dependency Management: Maven simplifies the process of managing external libraries and dependencies for a project. 
 It automatically downloads the required libraries from a central repository and includes them in the build.
 
-2. Build Automation: Maven handles the build lifecycle of a project. It provides a set of predefined build phases (e.g., compile, test, package, install) that can be 
-executed in a sequential manner. This makes it easier to create a consistent build process.
+2. Build Automation: Maven handles the build lifecycle of a project. It provides a set of predefined build phases 
+(e.g., compile, test, package, install) that can be executed in a sequential manner. This makes it easier to create a consistent build process.
 
 3. Project Object Model (POM): Maven uses a Project Object Model, which is an XML file (pom.xml) that describes the project and its configuration. 
 This includes information like project dependencies, version numbers, build settings, and more.
@@ -28,3 +30,43 @@ there are specific goals (e.g., compile goal within the compile phase). Develope
 
 9. Dependency Scope: Maven allows you to specify the scope of a dependency (e.g., compile, provided, test) which determines when and where the dependency 
 will be available during the build process.
+
+#################################################################################################################################
+
+Using maven, we'll build the project code and it generates a single build file also called as artifact (all supported files
+to run the application are bundled together)
+
+Different programming languages have different build files:
+-----------------------------------------------------------
+c++ ================>  tar.gz
+Java programming====> .jar
+web application=====> .war
+enterprize app======> .ear
+.net programming====> .msi, .dll, .exe
+
+3 built-in life cycles of Maven build:
+1. Default :23 phases
+2. clean   :3 phases
+3. site    :4 phases
+
+******************** Important phases in Default build life cycle = validate + compile + test + package ********************
+
+Installing Maven in Linux OS:
+
+# apt update -y
+# apt install default-jdk -y
+# apt install maven -y
+
+# apt update - && apt install default-jdk -y && apt install maven -y
+
+mvn --version
+
+mvn validate
+mvn compile
+mvn test
+mvn package
+mvn clean
+
+
+
+
