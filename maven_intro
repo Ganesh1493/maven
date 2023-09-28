@@ -61,14 +61,6 @@ enterprize app======> .ear
 2. clean   :3 phases
 3. site    :4 phases
 
-******************** Important phases in Default build life cycle = validate + compile + test + package ********************
-
-mvn validate
-mvn compile
-mvn test
-mvn package
-mvn clean
-
 Installing Maven in Linux OS (short cut):
 ========================================
 
@@ -98,7 +90,7 @@ Either first go to /opt folder by using 'cd /opt' and then download maven or aft
 # Finally, we need to install it by unzipping or extracting under '/opt' folder
 # tar -xvzf <zip file>
 
-# Next, we need to set/define 2 environmental variables (Home & Path) inorder for OS to understand where the maven is downloaded
+# Next, we need to set/define 2 environmental variables (Home & Path) inorder for OS to understand where the maven is installed
 
 ***** Command line or Terminal ******
 
@@ -120,9 +112,23 @@ artifactId
 packaging
 version
 
-First command to execute in maven server is << mvn archetype:generate >>
-Maven is maintaining an online repository where it is storing all the supporting project structures. 
-All the maven related stuff, it is downloading from the central repository.
+If you want to create or generate a project structure use the commmand 'mvn archetype:generate' 
+Maven is maintaining an online repository where it is storing all the supported project structures. All the maven related stuff, 
+it is downloading from the central repository.
+
+# apt install tree -y
+# tree .
+
+
+
+******************** Important phases in Default build life cycle = validate + compile + test + package ********************
+
+mvn validate
+mvn compile
+mvn test
+mvn package
+mvn clean
+
 
 
 
