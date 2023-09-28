@@ -1,8 +1,10 @@
 Maven is a powerful build automation and project management tool primarily used for Java projects. It's an open source software 
-and purely written in java (java based tool). 
-It falls under the category of build tools in the DevOps ecosystem.
+which is purely written in java (java based tool). However, can be used to build and manage projects written in any other language.
+
+******************** It falls under the category of build tools in the DevOps ecosystem ********************************
 
 Here are some key aspects of Maven in DevOps:
+=============================================
 
 1. Dependency Management: Maven simplifies the process of managing external libraries and dependencies for a project. 
 It automatically downloads the required libraries from a central repository and includes them in the build.
@@ -33,8 +35,16 @@ will be available during the build process.
 
 #################################################################################################################################
 
-Using maven, we'll build the project code and it generates a single build file also called as artifact (all supported files
-to run the application are bundled together)
+==> Using maven, we'll build the project code and it generates a single build file also called as artifact (all supported files
+to run the application are bundled together).
+
+==> In real-time scenarios in any organization/in any project/in any programming, we'll working with some thousands of files.
+To compile these thousands of files, we require lot of dependencies which we can't download manually and we can't arrange
+them in proper directories manually.
+
+==> Here, maven is providing us a project structure using which a predefined project strcuture should be developed. Then, we can 
+upload all our project related files inside that so maven will manage the project automatically hence no need for us to 
+understand or download which dependency is required by visiting websites.
 
 Different programming languages have different build files:
 -----------------------------------------------------------
@@ -53,7 +63,14 @@ enterprize app======> .ear
 
 ******************** Important phases in Default build life cycle = validate + compile + test + package ********************
 
-Installing Maven in Linux OS:
+mvn validate
+mvn compile
+mvn test
+mvn package
+mvn clean
+
+Installing Maven in Linux OS (short cut):
+========================================
 
 # apt update -y
 # apt install default-jdk -y
@@ -63,11 +80,32 @@ Installing Maven in Linux OS:
 
 mvn --version
 
-mvn validate
-mvn compile
-mvn test
-mvn package
-mvn clean
+Installing Maven in Linux OS (Binary method):
+=============================================
+# apt update -y
+# apt install default-jdk -y
+
+most of the times, 3rd party softwares/tools will be installed in '/opt' folder
+
+# Go to maven official website (maven.apache.org/download.cgi) and you'll be able to see the latest version
+# Always remember to download tar.gz file, right click on link and copy link address
+# To download using command line, use wget command
+
+Either first go to /opt folder by using 'cd /opt' and then download maven or after downloading, move it into /opt folder
+
+# wget <paste the copied link address of maven>
+# It'll download a zip file, we need to unzip it
+# Finally, we need to install it by unzipping or extracting under '/opt' folder
+# tar -xvzf <zip file>
+
+# Next, we need to set/define 2 environmental variables (Home & Path) inorder for OS to understand where the maven is downloaded
+
+***** Command line or Terminal ******
+
+# export M2_HOME=/opt/apache
+# export PATH=$PATH:$M2_HOME/bin
+
+# mvn --version
 
 ********************* Maven supports 3,000+ project structures ****************************
 Depending on different frameworks/projects/technology, we have different project structures
@@ -85,6 +123,7 @@ version
 First command to execute in maven server is << mvn archetype:generate >>
 Maven is maintaining an online repository where it is storing all the supporting project structures. 
 All the maven related stuff, it is downloading from the central repository.
+
 
 
 
