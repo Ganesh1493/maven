@@ -102,7 +102,9 @@ Either first go to /opt folder by using 'cd /opt' and then download maven or aft
 ********************* Maven supports 3,000+ project structures ****************************
 Depending on different frameworks/projects/technology, we have different project structures
 
-I have an application requirement to build an artifact which is .jar (java archive) file
+I have an application requirement to build an artifact which is .jar (Java archive) file
+
+In local repository, there is no project structure, no libraries, no dependencies, no plugins.
 
 If you want to create or generate a project structure use the commmand 'mvn archetype:generate' 
 Maven is maintaining an online repository where it is storing all the supported project structures. All the maven related stuff, 
@@ -111,7 +113,7 @@ it is downloading from the central repository.
 # apt install tree -y
 # tree .
 
-############ Pom.xml file (Project Object Model) ##############
+*********************** Pom.xml file (Project Object Model) ***************************** 
 Elements:
 
 project
