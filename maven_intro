@@ -77,7 +77,7 @@ Installing Maven in Linux OS (Binary method):
 # apt update -y
 # apt install default-jdk -y
 
-most of the times, 3rd party softwares/tools will be installed in '/opt' folder
+*********** Most of the times, 3rd party softwares/tools will be installed in '/opt' folder *************
 
 # Go to maven official website (maven.apache.org/download.cgi) and you'll be able to see the latest version
 # Always remember to download tar.gz file, right click on link and copy link address
@@ -102,6 +102,15 @@ Either first go to /opt folder by using 'cd /opt' and then download maven or aft
 ********************* Maven supports 3,000+ project structures ****************************
 Depending on different frameworks/projects/technology, we have different project structures
 
+I have an application requirement to build an artifact which is .jar (java archive) file
+
+If you want to create or generate a project structure use the commmand 'mvn archetype:generate' 
+Maven is maintaining an online repository where it is storing all the supported project structures. All the maven related stuff, 
+it is downloading from the central repository.
+
+# apt install tree -y
+# tree .
+
 ############ Pom.xml file (Project Object Model) ##############
 Elements:
 
@@ -112,14 +121,11 @@ artifactId
 packaging
 version
 
-If you want to create or generate a project structure use the commmand 'mvn archetype:generate' 
-Maven is maintaining an online repository where it is storing all the supported project structures. All the maven related stuff, 
-it is downloading from the central repository.
+In order to run/build pure java project/app, we need to create a project structure number: ****
+Development manager will be giving us this information because they're the ones who'll decide what project
+or structure they're going to create
 
-# apt install tree -y
-# tree .
-
-
+.jar (Java archive) file will be generated
 
 ******************** Important phases in Default build life cycle = validate + compile + test + package ********************
 
@@ -129,15 +135,44 @@ mvn test
 mvn package
 mvn clean
 
+############################################################################################################
 
+Next, I have an application requirement to build a different artifact which is .war (web archive) file
 
+.jar file is a local pure Java application
+.war file is a web application where it can be deployed or viewed over web interface (Url/Web browser): .jsp (java server pages) files
 
+1. mvn archetype:generate
+2. sample project structure number: **** (choose this from the project structure list)
+3. always choose latest version
+4. generating pom.xml file, define values
+5. Enter 'Y'
+6. Hit Enter
 
+Build will be success, then navigate to that project directory
 
+tree .
+vi pom.xml
+cd /src/main/webapp
+vi index.jsp
+cd ../../..
 
+mvn validate
+mvn compile
+mvn test
+mvn package
 
+tree .
+Output: .war file
 
+If you're running .html file or writing .html code, that is static website. To view it, we need a webserver
+like nginx/httpd etc
 
+To see/check/view a .war file or project over the web, we need a Java based web application server. This will
+process some information and show the output on the screen. Once of the popular web application server is
+Tomcat. 
 
-
+If we install it on a server, it'll become web application server. On that web application server, 
+we can deploy/install/configure .war file so that whatever the content or code we've written inside
+.war project, will be displayed on the web application server.
 
